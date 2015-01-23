@@ -2,6 +2,7 @@ Docker-ovftool
 =============
 ```Docker-ovftool``` allows you to build a docker container that includes ```ovftool```.  It does not currently represent a distributed container since ```ovftool``` cannot be distributed by VMware license.
 
+```Ovftool``` the application and information is available from VMware at https://www.vmware.com/support/developer/ovf/.  It's primary purpose is to assist in distributing uploading OVF/OVA to the proper platforms, ie. vSphere/vCloud Director and creating VM/VApp/vCloud VApp's based on the OVF specification.  It represents the most mature toolset for completing these tasks that continually is updated by VMware.  It is common to see applications wrap this toolset versus building the capability themselves.
 
 Building the container
 -------
@@ -17,7 +18,7 @@ Running the container
 ---------------------
 The container automatically issues a ```--help``` if there are no commands listed.
 
-As an example of usage here we use ```ovftool``` to upload a CoreOS OVF file to a vCloud Director VApp.
+As an example of usage here we use ```ovftool``` to upload a CoreOS OVF file to a vCloud Director VApp. CoreOS is a work in progress with vCD, but use this as an example of how it should work.
 
 ```docker run -ti ovftool:4.0.0 --acceptAllEulas http://alpha.release.core-os.net/amd64-usr/561.0.0/coreos_production_vmware_ova.ova "vcloud://yourname@domain@us-virginia-1-4.vchs.vmware.com:443?org=ae010611-6b0b-4f56-a468-ce81f196b51b&vdc=VDC1&vapp=coreos01"```
 
